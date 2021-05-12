@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin - Dashboard</title>
+    <title>Forecast</title>
 
     <!-- Bootstrap core CSS-->
     <link href="../static/dashboard/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -95,7 +95,12 @@
                   <div class="card-body-icon">
                     <i class="fas fa-fw fa-comments"></i>
                   </div>
-                  <div class="mr-5">select state</div>
+                  <div class="mr-5">Provide State</div>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="state">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -106,6 +111,11 @@
                     <i class="fas fa-fw fa-list"></i>
                   </div>
                   <div class="mr-5">Season</div>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="season">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -116,6 +126,11 @@
                     <i class="fas fa-fw fa-shopping-cart"></i>
                   </div>
                   <div class="mr-5">crop</div>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="crop name">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -126,6 +141,11 @@
                     <i class="fas fa-fw fa-life-ring"></i>
                   </div>
                   <div class="mr-5">Rainfall</div>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="rainfall(in 'mm')">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -136,6 +156,11 @@
                     <i class="fas fa-fw fa-comments"></i>
                   </div>
                   <div class="mr-5">Temperature</div>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Temperature(in '°C')">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -146,6 +171,11 @@
                     <i class="fas fa-fw fa-list"></i>
                   </div>
                   <div class="mr-5">Area</div>
+                  <form>
+                    <div class="form-group">
+                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Area(in 'ha')">
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -181,7 +211,7 @@
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="reg_login.html">Logout</a>
+            <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
           </div>
         </div>
       </div>

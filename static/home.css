@@ -366,3 +366,27 @@ footer .column i + i {
   z-index: 9999;
   transition: all 1.5s ease;
 }
+
+.text-blue {
+  color: #5e72e4;
+}
+.text-green {
+  color: #2dce89;
+}
+.text-orange {
+  color: #fb6340;
+}
+.section-3 .myCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  width: 20em;
+  margin: 3em;
+  min-height: 18em;
+  padding: 1em;
+  border: none;
+  filter: drop-shadow(4px 4px 15px rgba(0, 0, 0, 0.15));
+  transition: 0.25s;
+}
+
+

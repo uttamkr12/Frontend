@@ -91,7 +91,7 @@ def predict():
 	
     if request.method == "POST":
 
-        print(request.form.values())
+        #print(request.form.values())
         
         state_dict = {'Andaman and Nicobar': 1, 'Andhra Pradesh': 2, 'Arunachal Pradesh': 3, 'Assam': 4, 'Bihar': 5, 'Chandigarh': 6, 'Chhattisgarh': 7, 'Dadra and Nagar Haveli': 8, 'Goa': 9, 'Gujarat': 10, 'Haryana': 11, 'Himachal Pradesh': 12, 'Jammu and Kashmir ': 13, 'Jharkhand': 14, 'Karnataka': 15, 'Kerala': 16, 'Madhya Pradesh': 17, 'Maharashtra': 18, 'Manipur': 19, 'Meghalaya': 20, 'Mizoram': 21, 'Nagaland': 22, 'Odisha': 23, 'Puducherry': 24, 'Punjab': 25, 'Rajasthan': 26, 'Sikkim': 27, 'Tamil Nadu': 28, 'Telangana ': 29, 'Tripura': 30, 'Uttarakhand': 31, 'Uttar Pradesh': 32, 'West Bengal': 33}
         ##states in dict. form##

@@ -88,100 +88,58 @@
           </ol>
 
           <!-- Icon Cards-->
-          <form method="POST" action="{{ url_for('predict') }}"> 
-          <div class="row">
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-dark o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    
-                  </div>
-                  <div class="mr-5">Provide State</div>
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="state" placeholder="state">
-                    </div>
-                  </form>
+          <form method="POST" action="{{url_for('predict')}}">
+            <div class="row">
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-dark o-hidden h-100">
+                  <div class="card-body">
+                <input type="text" class="form-control" name="state" placeholder="state">
+                </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-dark o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                  </div>
-                  <div class="mr-5">Season</div>
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="season" placeholder="season">
-                    </div>
-                  </form>
+
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-dark o-hidden h-100">
+                  <div class="card-body">
+                <input type="text" class="form-control" name="season" placeholder="season">
+                </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-dark o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                   
-                  </div>
-                  <div class="mr-5">crop</div>
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="crop" placeholder="crop name">
-                    </div>
-                  </form>
+
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-dark o-hidden h-100">
+                  <div class="card-body">
+                <input type="text" class="form-control" name="crop" placeholder="crop">
+                </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-dark o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                  
-                  </div>
-                  <div class="mr-5">Rainfall</div>
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="rainfall" placeholder="rainfall(in 'mm')">
-                    </div>
-                  </form>
+
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-dark o-hidden h-100">
+                  <div class="card-body">
+                <input type="text" class="form-control" name="rainfall" placeholder="rainfall(in 'mm')">
+                </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-dark o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    
-                  </div>
-                  <div class="mr-5">Temperature</div>
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="temperature" placeholder="Temperature(in '°C')">
-                    </div>
-                  </form>
+
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-dark o-hidden h-100">
+                  <div class="card-body">
+                <input type="text" class="form-control" name="temperature" placeholder="temperature(in '°C')">
+                </div>
                 </div>
               </div>
-            </div>
-            <div class="col-xl-3 col-sm-6 mb-3">
-              <div class="card text-white bg-dark o-hidden h-100">
-                <div class="card-body">
-                  <div class="card-body-icon">
-                    
-                  </div>
-                  <div class="mr-5">Area</div>
-                  <form>
-                    <div class="form-group">
-                      <input type="text" class="form-control" name="area" placeholder="Area(in 'ha')">
-                    </div>
-                  </form>
+
+              <div class="col-xl-3 col-sm-6 mb-3">
+                <div class="card text-white bg-dark o-hidden h-100">
+                  <div class="card-body">
+                <input type="text" class="form-control" name="area" placeholder="area(in 'ha')">
+                </div>
                 </div>
               </div>
+              <input type="submit" class="btn btn-warning" value="predict"></input>
             </div>
-          </div>
-          <button type="submit" class="btn btn-warning" method="POST" onclick="{{url_for('predict')}}" >Predict</button>
-        </form>
+          </form>
           <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->

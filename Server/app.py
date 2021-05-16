@@ -1,8 +1,15 @@
 from datetime import timedelta
 from flask import Flask, render_template, url_for, request, session, redirect, flash
 from flask_bootstrap import Bootstrap
+from numpy.core.numeric import array_equal
+from numpy.testing._private.utils import tempdir
 from flask_pymongo import PyMongo
 import bcrypt
+import pickle
+import numpy as np
+#import sklearn
+f = open('/home/itachi/Downloads/virtual/Final-year-project/ML-Model/model.pkl','rb')
+model = pickle.load(f)
 app = Flask(__name__, template_folder='../templates',static_folder='../static')
 app.config['MONGO_URI'] = 'mongodb+srv://uttam_kr12:JGr73uR1ZlrA9ryx@cluster0.34ucg.mongodb.net/Forecast'
 app.secret_key="hello"
@@ -79,8 +86,50 @@ def logout():
     else:
         return redirect(url_for('dashboard'))
 
+@app.route("/predict", methods=["POST","GET"])
+def predict():
+	
+    if request.method == "POST":
+
+        print(request.form.values())
+        
+        state_dict = {'Andaman and Nicobar': 1, 'Andhra Pradesh': 2, 'Arunachal Pradesh': 3, 'Assam': 4, 'Bihar': 5, 'Chandigarh': 6, 'Chhattisgarh': 7, 'Dadra and Nagar Haveli': 8, 'Goa': 9, 'Gujarat': 10, 'Haryana': 11, 'Himachal Pradesh': 12, 'Jammu and Kashmir ': 13, 'Jharkhand': 14, 'Karnataka': 15, 'Kerala': 16, 'Madhya Pradesh': 17, 'Maharashtra': 18, 'Manipur': 19, 'Meghalaya': 20, 'Mizoram': 21, 'Nagaland': 22, 'Odisha': 23, 'Puducherry': 24, 'Punjab': 25, 'Rajasthan': 26, 'Sikkim': 27, 'Tamil Nadu': 28, 'Telangana ': 29, 'Tripura': 30, 'Uttarakhand': 31, 'Uttar Pradesh': 32, 'West Bengal': 33}
+        ##states in dict. form##
+
+        season_dict = {'Kharif': 1, 'Rabi': 2}
+        ## season in dict. form##
+        
+        crop_dict = {'Rice': 1, 'Wheat': 2, 'Bajra': 3, 'Jowar': 4}
+        ## crop in dict. form##
 
 
+        state  = request.form.get("state")
+        for value, key in state_dict.items():
+            if state == key:
+                state_key=value
+         
+        
+        season  = request.form.get("season")
+        for value, key in season_dict.items():
+            if season == key:
+                season_key=value
 
+        crop    = request.form.get("crop")
+        for value, key in crop_dict.items():
+            if crop == key:
+                crop_key=value
+        rainfall= request.form.get("rainfall")
+
+        temp    = request.form.get("temperature")
+        
+        area    = request.form.get("area")
+        #List of attributes
+        user_input=[state_key,season_key,crop_key,rainfall,temp,area]
+        print(user_input)
+        prediction=model.predict([user_input])
+        print(prediction)
+
+        return redirect(url_for('dashboard'))
 if __name__=="__main__":
     app.run(debug=True)
+

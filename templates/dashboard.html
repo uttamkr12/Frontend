@@ -88,6 +88,7 @@
           </ol>
 
           <!-- Icon Cards-->
+          <form method="POST" action="{{ url_for('predict') }}"> 
           <div class="row">
             <div class="col-xl-3 col-sm-6 mb-3">
               <div class="card text-white bg-dark o-hidden h-100">
@@ -98,7 +99,7 @@
                   <div class="mr-5">Provide State</div>
                   <form>
                     <div class="form-group">
-                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="state">
+                      <input type="text" class="form-control" name="state" placeholder="state">
                     </div>
                   </form>
                 </div>
@@ -112,7 +113,7 @@
                   <div class="mr-5">Season</div>
                   <form>
                     <div class="form-group">
-                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="season">
+                      <input type="text" class="form-control" name="season" placeholder="season">
                     </div>
                   </form>
                 </div>
@@ -127,7 +128,7 @@
                   <div class="mr-5">crop</div>
                   <form>
                     <div class="form-group">
-                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="crop name">
+                      <input type="text" class="form-control" name="crop" placeholder="crop name">
                     </div>
                   </form>
                 </div>
@@ -142,7 +143,7 @@
                   <div class="mr-5">Rainfall</div>
                   <form>
                     <div class="form-group">
-                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="rainfall(in 'mm')">
+                      <input type="text" class="form-control" name="rainfall" placeholder="rainfall(in 'mm')">
                     </div>
                   </form>
                 </div>
@@ -157,7 +158,7 @@
                   <div class="mr-5">Temperature</div>
                   <form>
                     <div class="form-group">
-                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Temperature(in '°C')">
+                      <input type="text" class="form-control" name="temperature" placeholder="Temperature(in '°C')">
                     </div>
                   </form>
                 </div>
@@ -172,15 +173,16 @@
                   <div class="mr-5">Area</div>
                   <form>
                     <div class="form-group">
-                      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Area(in 'ha')">
+                      <input type="text" class="form-control" name="area" placeholder="Area(in 'ha')">
                     </div>
                   </form>
                 </div>
               </div>
             </div>
           </div>
-          <button type="submit" class="btn btn-warning" action="">Predict</button>
-        <!-- /.container-fluid -->
+          <button type="submit" class="btn btn-warning" method="POST" onclick="{{url_for('predict')}}" >Predict</button>
+        </form>
+          <!-- /.container-fluid -->
 
         <!-- Sticky Footer -->
         <footer class="sticky-footer">

@@ -1,0 +1,9 @@
+Flask
+flask_bootstrap
+flask_pymongo
+bcrypt
+scikit-learn
+pickle
+csv
+datetime
+numpy
